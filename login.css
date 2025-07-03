@@ -1,0 +1,26 @@
+body { font-family: sans-serif; background: #f7f7f7; }
+.login-container {
+    width: 350px;
+    margin: 80px auto;
+    padding: 30px;
+    background: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px #ccc;
+}
+h2 { text-align: center; }
+label { display: block; margin-top: 15px; }
+input[type="text"], input[type="password"] {
+    width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;
+}
+.btn {
+    width: 100%; margin-top: 20px; padding: 10px;
+    background: #4caf50; color: #fff; border: none; border-radius: 4px; font-size: 16px;
+    cursor: pointer;
+}
+.register-link {
+    display: block; text-align: right; margin-top: 10px;
+}
+.error-message {
+    color: #e53935; background: #fff3f3; border: 1px solid #e53935; padding: 10px 15px; border-radius: 4px; margin: 10px 0;
+    text-align: center;
+} 

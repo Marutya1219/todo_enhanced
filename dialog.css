@@ -1,0 +1,16 @@
+.modal-bg {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; z-index: 1000;
+}
+.modal-box {
+    background: #fff; padding: 30px 40px; border-radius: 8px; box-shadow: 0 2px 8px #888;
+    min-width: 300px; text-align: center;
+}
+.modal-box .modal-title { font-size: 18px; margin-bottom: 15px; }
+.modal-box .modal-btns { margin-top: 20px; }
+.modal-box .btn { margin: 0 10px; }
+
+.error-message {
+    color: #e53935; background: #fff3f3; border: 1px solid #e53935; padding: 10px 15px; border-radius: 4px; margin: 10px 0;
+    text-align: center;
+} 

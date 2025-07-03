@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <button class="btn" type="submit">ログイン</button>
         </form>
-        <a class="register-link" href="register.php">ユーザー登録はこちら</a>
+        <a class="register-link" href="register 1.php">ユーザー登録はこちら</a>
     </div>
 </body>
 </html>

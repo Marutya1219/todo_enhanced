@@ -62,52 +62,73 @@ $progress = ($total > 0) ? round($done / $total * 100) : 0;
 </head>
 <body>
     <div class="todo-container">
-        <header>
+        <header class="card">
             <div class="user-info">
                 <span>こんにちは、<?= htmlspecialchars($username) ?>さん</span>
                 <a href="logout.php" class="logout-btn">ログアウト</a>
             </div>
             <h2>ToDoリスト</h2>
         </header>
-        <section class="add-task">
+        <section class="add-task card">
             <?php if ($error): ?>
                 <div class="error-message"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
             <form method="post">
-                <input type="text" name="title" placeholder="タスク名" required>
-                <input type="text" name="detail" placeholder="詳細">
-                <input type="date" name="due_date">
-                <select name="priority">
-                    <option value="低">低</option>
-                    <option value="中" selected>中</option>
-                    <option value="高">高</option>
-                </select>
+                <div class="form-group">
+                    <label for="title">タスク名</label>
+                    <input type="text" id="title" name="title" placeholder="タスク名" required>
+                </div>
+                <div class="form-group">
+                    <label for="detail">詳細</label>
+                    <input type="text" id="detail" name="detail" placeholder="詳細">
+                </div>
+                <div class="form-group">
+                    <label for="due_date">期限</label>
+                    <input type="date" id="due_date" name="due_date">
+                </div>
+                <div class="form-group">
+                    <label for="priority">優先度</label>
+                    <select id="priority" name="priority">
+                        <option value="低">低</option>
+                        <option value="中" selected>中</option>
+                        <option value="高">高</option>
+                    </select>
+                </div>
                 <button class="btn" type="submit" name="add_task">追加</button>
             </form>
         </section>
-        <section class="filter-task">
+        <section class="filter-task card">
             <form method="get">
-                <input type="text" name="keyword" placeholder="検索ワード" value="<?= htmlspecialchars($_GET['keyword'] ?? '') ?>">
-                <select name="priority">
-                    <option value="">優先度(全て)</option>
-                    <option value="低" <?= (($_GET['priority'] ?? '') === '低') ? 'selected' : '' ?>>低</option>
-                    <option value="中" <?= (($_GET['priority'] ?? '') === '中') ? 'selected' : '' ?>>中</option>
-                    <option value="高" <?= (($_GET['priority'] ?? '') === '高') ? 'selected' : '' ?>>高</option>
-                </select>
-                <select name="status">
-                    <option value="">状態(全て)</option>
-                    <option value="未完了" <?= (($_GET['status'] ?? '') === '未完了') ? 'selected' : '' ?>>未完了</option>
-                    <option value="完了" <?= (($_GET['status'] ?? '') === '完了') ? 'selected' : '' ?>>完了</option>
-                </select>
+                <div class="form-group">
+                    <label for="keyword">検索ワード</label>
+                    <input type="text" id="keyword" name="keyword" placeholder="検索ワード" value="<?= htmlspecialchars($_GET['keyword'] ?? '') ?>">
+                </div>
+                <div class="form-group">
+                    <label for="priority-filter">優先度</label>
+                    <select id="priority-filter" name="priority">
+                        <option value="">優先度(全て)</option>
+                        <option value="低" <?= (($_GET['priority'] ?? '') === '低') ? 'selected' : '' ?>>低</option>
+                        <option value="中" <?= (($_GET['priority'] ?? '') === '中') ? 'selected' : '' ?>>中</option>
+                        <option value="高" <?= (($_GET['priority'] ?? '') === '高') ? 'selected' : '' ?>>高</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status">状態</label>
+                    <select id="status" name="status">
+                        <option value="">状態(全て)</option>
+                        <option value="未完了" <?= (($_GET['status'] ?? '') === '未完了') ? 'selected' : '' ?>>未完了</option>
+                        <option value="完了" <?= (($_GET['status'] ?? '') === '完了') ? 'selected' : '' ?>>完了</option>
+                    </select>
+                </div>
                 <button class="btn" type="submit">検索</button>
             </form>
         </section>
-        <section class="progress-bar">
+        <section class="progress-bar card">
             <div class="bar-bg">
                 <div class="bar-fill" style="width:<?= $progress ?>%">進捗 <?= $progress ?>%</div>
             </div>
         </section>
-        <section class="task-list">
+        <section class="task-list card">
             <table>
                 <thead>
                     <tr>

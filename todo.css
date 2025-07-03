@@ -2,21 +2,45 @@ body { font-family: sans-serif; background: #f7f7f7; }
 .todo-container {
     width: 700px;
     margin: 40px auto;
+    background: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 30px 0 40px 0;
+}
+.card {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px #ccc;
-    padding: 30px 40px 40px 40px;
+    padding: 24px 32px;
+    margin-bottom: 24px;
 }
-header { display: flex; justify-content: space-between; align-items: center; }
+header.card {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 32px;
+    box-shadow: none;
+    background: none;
+    padding: 0 32px 0 32px;
+}
 .user-info { font-size: 15px; }
 .logout-btn { margin-left: 20px; color: #2196f3; text-decoration: none; }
 h2 { text-align: left; margin: 0; }
-.add-task form, .filter-task form { display: flex; gap: 10px; margin: 20px 0; }
+.add-task form, .filter-task form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 .add-task input, .add-task select, .filter-task input, .filter-task select {
     padding: 7px; border: 1px solid #ccc; border-radius: 4px;
 }
 .btn {
     background: #4caf50; color: #fff; border: none; border-radius: 4px; padding: 8px 18px; font-size: 15px; cursor: pointer;
+    align-self: flex-start;
 }
 .progress-bar { margin: 20px 0; }
 .bar-bg {
